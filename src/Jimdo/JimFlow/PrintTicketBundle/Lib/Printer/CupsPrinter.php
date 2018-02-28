@@ -14,7 +14,7 @@ class CupsPrinter implements PrinterInterface
         file_put_contents($filename, $file['content']);
 
         // TODO Make color output configurable? (-o ColorModel=Grayscale)
-        $process = new Process('lp -o media=A6,MultiTray -o landscape -d ' . escapeshellarg($printerId) . ' ' . escapeshellarg($filename));
+        $process = new Process('lp -o media=A6,5Tray -o landscape -d ' . escapeshellarg($printerId) . ' ' . escapeshellarg($filename));
         $process->run();
 
         if (!$process->isSuccessful()) {
